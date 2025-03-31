@@ -107,6 +107,69 @@ Die Erweiterung von SecureComm verfolgt das Ziel, eine dezentrale, sichere Kommu
 
 ---
 
+## Plattformstrategie & Verfügbarkeit
+
+SecureComm wird als **plattformentsprechende App bereitgestellt**, sowohl für Desktop- als auch Mobile-Systeme:
+
+- Web-App (PWA-fähig)
+- Desktop-App (Electron)
+- Mobile-Apps (React Native oder Flutter)
+- App-Distribution über:
+  - ✅ Offizielle Webseite (Registrierung nötig)
+  - ✅ Google Play Store
+  - ✅ Apple App Store
+
+### Registrierung & Download-Strategie
+- Anwendung ist nur nach Registrierung via OAuth2 (Google, GitHub, etc.) zugänglich
+- Registrierung erfolgt entweder direkt auf der Webseite oder in der App
+- Nach erfolgreichem Login wird die Anwendung zum Download bereitgestellt
+- ✅ Vorteil: Schützt vor massenhaften, automatisierten Downloads zur Sabotage der Serverstruktur
+
+---
+
+## Datenschutz, App Store-Konformität & Einschränkungen
+
+### Datenschutz & Datensparsamkeit
+- Die Anwendung erhebt **nur die OAuth2-Registrierungsdaten**, die für das jeweilige Profil notwendig sind
+- Es werden **keine Chat-, Video-, Datei- oder Verbindungsinhalte gespeichert oder analysiert**
+- Keine temporäre Speicherung auf dem Server, Kommunikation ist ausschließlich Peer-to-Peer nach initialer Vermittlung
+
+### Kontaktbasierte Verbindung
+- Eine Verbindung zwischen zwei Nutzern ist **nur möglich, wenn beide eine bestätigte Kontaktanfrage** vorweisen
+- So wird **Missbrauch (z. B. durch Spam oder ungewollten Kontakt)** unterbunden
+
+### Apple-spezifische Einschränkungen (iOS)
+- Aufgrund möglicher **App Store-Einschränkungen** auf iOS-Geräten:
+  - **Dateiübertragungen können auf Wunsch deaktiviert** werden
+  - Stattdessen erscheint die Meldung:
+    > "Apple verhindert unkontrollierten Datenaustausch"
+- Damit ist NoSpices vollständig **Store-konform und transparent** gegenüber Apple-Nutzern
+
+### Verbindungsunterbrechung mit Feedback
+- Wenn ein Teilnehmer nicht mehr sendet oder erreichbar ist, wird dies im Interface **verständlich erklärt** (z. B. „Teilnehmer sendet nicht mehr“)
+
+---
+
+## Monetarisierung & Traffic-Finanzierung
+
+### Werbung als Einnahmequelle
+- Alle Nutzer sehen standardmäßig einen **dezenten Werbestreifen**, ähnlich wie bei Yahoo Mail
+- Die Werbung:
+  - Ist **nicht personalisiert**, da keine Nutzerdaten erhoben werden
+  - Wird **ausschließlich im Interface angezeigt**, nicht in der Kommunikation
+
+### Werbefrei durch Abo-Modell
+- Für **0,50 $ pro Monat** kann Werbung dauerhaft deaktiviert werden
+- Die Zahlung erfolgt **über Apple In-App Purchase (IAP)** bzw. **Google Billing API** je nach Plattform
+- Es gibt **keine weiteren Einschränkungen** – alle Features sind auch im freien Zugang enthalten
+
+### Nachhaltige Finanzierung
+- Die Werbung + Abo-Modell finanzieren die **AWS/Azure-Infrastrukturkosten**
+- Kein Verkauf, Export oder Analyse von Nutzer- oder Verkehrsdaten
+- Die Privatsphäre der Nutzer bleibt vollständig gewahrt
+
+---
+
 ## Projektphasen (ergänzt)
 
 | Phase | Ziel | Dauer |
